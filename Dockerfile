@@ -7,12 +7,14 @@ FROM centos:7
 
 WORKDIR /work
 
-# Install package from CentOS 7 base and EPEL
+# Install packages from CentOS 7 base and EPEL
 RUN yum -y update
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN yum -y install python3 python3-pip root which install python3-root python3-devel
 RUN yum -y install curl libcurl libcurl-devel
 RUN yum -y install root-tmva root-tmva-python root-minuit2 python3-jupyroot
+# Additional packages for some C++ work:
+RUN yum -y install boost-devel gsl-devel binutils-devel
 
 # Install packages from PyPI
 RUN pip3 install --upgrade wheel
