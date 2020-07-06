@@ -1,7 +1,7 @@
-# As of 11-Feb-2020, this will install:
+# As of 06-Jul-2020, this will install:
 # - CentOS 7
 # - Jupyter 1.0.0
-# - ROOT 6.18.04
+# - ROOT 6.20.06
 
 FROM centos:7
 
@@ -18,8 +18,9 @@ RUN yum -y install boost-devel gsl-devel binutils-devel
 
 # Install packages from PyPI
 RUN pip3 install --upgrade wheel
-RUN pip3 install --upgrade jupyter jupyterlab rootpy rootkernel
-RUN pip3 install --upgrade iminuit numpy scipy matplotlib pandas root-numpy sympy tensorflow terminado uproot urllib3 pycurl tables
+RUN pip3 install --upgrade jupyter jupyterlab 
+RUN pip3 install --upgrade iminuit numpy scipy matplotlib pandas sympy terminado urllib3 pycurl tables
+RUN pip3 install --upgrade rootpy rootkernel root-numpy uproot tensorflow
 
 RUN yum clean all
 
