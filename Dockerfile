@@ -1,7 +1,7 @@
-# As of 06-Jul-2020, this will install:
+# As of 02-Aug-2020, this will install:
 # - CentOS 7
 # - Jupyter 1.0.0
-# - ROOT 6.20.06
+# - ROOT 6.22.00
 
 FROM centos:7
 
