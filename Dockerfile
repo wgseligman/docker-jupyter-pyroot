@@ -1,7 +1,13 @@
-# As of 02-Aug-2020, this will install:
+# This will install:
 # - CentOS 7
-# - Jupyter 1.0.0
-# - ROOT 6.22.00
+# - Jupyter 
+# - ROOT 
+
+# To see the version numbers (which change as the EPEL and PyPI repositories evolve)
+# start the Terminal from the Jupyter notebook and type:
+
+# rpm -q root
+# pip3 show jupyter
 
 FROM centos:7
 
