@@ -28,6 +28,7 @@ RUN pip3 install --upgrade jupyter jupyterlab
 RUN pip3 install --upgrade iminuit numpy scipy matplotlib pandas sympy terminado urllib3 pycurl tables
 RUN pip3 install --upgrade rootpy rootkernel root-numpy uproot tensorflow
 RUN pip3 install --upgrade coffea
+RUN pip3 install --upgrade numba colorama icc_rt cffi
 RUN pip3 install --upgrade tensorflow
 
 RUN yum clean all
