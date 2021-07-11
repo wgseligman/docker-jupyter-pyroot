@@ -34,4 +34,4 @@ RUN pip3 install --upgrade tensorflow
 RUN yum clean all
 
 # Run jupyter
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
