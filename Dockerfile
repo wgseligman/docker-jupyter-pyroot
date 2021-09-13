@@ -1,7 +1,7 @@
 # This will install:
 # - CentOS 7
 # - Jupyter 
-# - ROOT 
+# - ROOT 6.24
 
 # To see the version numbers (which change as the EPEL and PyPI repositories evolve)
 # start the Terminal from the Jupyter notebook and type:
