@@ -6,7 +6,7 @@ This is a reminder to the package's author of how to build the Docker container.
    
          docker build -t wgseligman/jupyter-pyroot .
          
-   - If the build is successful, push the container to the [Dockerhub repository](https://hub.docker.com/repository/docker/wgseligman/jupyter-pyroot):
+   - If the build is successful, push the container to the [Dockerhub repository](https://hub.docker.com/r/wgseligman/jupyter-pyroot):
    
          docker push wgseligman/jupyter-pyroot
          

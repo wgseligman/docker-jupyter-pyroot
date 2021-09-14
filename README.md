@@ -6,7 +6,7 @@ I've documented a [conda-based installation procedure](https://twiki.nevis.colum
 
 This project was inspired by [sidebo/docker-pyroot-notebook](https://github.com/sidebo/docker-pyroot-notebook), but was created independently. It's meant to match the OS (CentOS 7) and ROOT version (6.24.04 as of Sep-2021) in use on the Nevis Jupyterhub server, along with the Python and C++ packages most commonly used by Nevis physicists.
 
-If you wanted the already-built version, it is in a [Dockerhub](https://hub.docker.com/repository/docker/wgseligman/jupyter-pyroot/general) repository. You can download and execute the docker container with (in UNIX):
+If you wanted the already-built version, it is in a [Dockerhub](https://hub.docker.com/r/wgseligman/jupyter-pyroot) repository. You can download and execute the docker container with (in UNIX):
 
 ```
 sudo docker run -p 8080:8080 -v $PWD:/work wgseligman/jupyter-pyroot
