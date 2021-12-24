@@ -29,7 +29,7 @@ RUN yum -y install python3 python3-pip root which python3-root python3-devel
 RUN yum -y install root-tmva root-tmva-python root-minuit2 python3-jupyroot
 
 # curl will be needed when we install python packages below.
-RUN yum -y install curl libcurl libcurl-devel
+RUN yum -y install curl libcurl libcurl-devel 
 
 # Additional packages for some C++ work:
 RUN yum -y install make boost-devel gsl-devel binutils-devel 
@@ -40,6 +40,9 @@ RUN yum -y install make boost-devel gsl-devel binutils-devel
 # Set up cmake3 as default version of cmake.
 RUN yum -y install cmake3 
 RUN ln -sf /usr/bin/cmake3 /usr/bin/cmake
+
+# Other Linux packages required for python package compilation.
+RUN yum -y install python36-pillow-devel
 
 # Install packages from PyPI. These are the ones needed for almost any
 # Jupyter installation. 

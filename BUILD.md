@@ -6,6 +6,10 @@ This is a reminder to the package's author of how to build the Docker container.
    
          docker build -t wgseligman/jupyter-pyroot .
          
+   - The primary reason to rebuild this docker container is to take advantage of new versions of the various packages. Therefore, the first time you run the above command, you probably want to use the `--no-cache` option. Without that, docker will use the cached results from the previous build and won't actually rebuild anything:
+   
+         docker build --no-cache -t wgseligman/jupyter-pyroot .
+         
    - If the build is successful, push the container to the [Dockerhub repository](https://hub.docker.com/r/wgseligman/jupyter-pyroot):
    
          docker push wgseligman/jupyter-pyroot
