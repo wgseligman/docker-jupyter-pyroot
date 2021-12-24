@@ -4,7 +4,7 @@ This docker container is an off-shoot of a [ROOT tutorial](https://www.nevis.col
 
 I've documented a [conda-based installation procedure](https://twiki.nevis.columbia.edu/twiki/bin/view/Main/JupyterROOTContainers). This docker container is meant to provide a pre-compiled local copy of a Jupyter/ROOT/C++ workspace for those for whom conda is not a good solution.
 
-This project was inspired by [sidebo/docker-pyroot-notebook](https://github.com/sidebo/docker-pyroot-notebook), but was created independently. It's meant to match the OS (CentOS 7) and ROOT version (6.24.04 as of Sep-2021) in use on the Nevis Jupyterhub server, along with the Python and C++ packages most commonly used by Nevis physicists.
+This project was inspired by [sidebo/docker-pyroot-notebook](https://github.com/sidebo/docker-pyroot-notebook), but was created independently. It's meant to match the OS (CentOS 7) and ROOT version (6.24.06 as of Dec-2021) in use on the Nevis Jupyterhub server, along with the Python and C++ packages most commonly used by Nevis physicists.
 
 If you wanted the already-built version, it is in a [Dockerhub](https://hub.docker.com/r/wgseligman/jupyter-pyroot) repository. You can download and execute the docker container with (in UNIX):
 
