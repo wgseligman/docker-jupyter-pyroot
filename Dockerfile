@@ -1,5 +1,5 @@
 # This will install:
-# - CentOS 7
+# - AlmaLinux 9
 # - Jupyter 
 # - ROOT
 
@@ -9,40 +9,30 @@
 # rpm -q root
 # pip3 show jupyter
 
-FROM centos:7
+FROM almalinux:9
 
 WORKDIR /work
 
-# Install packages from CentOS 7 base, EPEL, and SCL (for a later compiler version)
-RUN yum -y update
-RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-RUN yum -y install centos-release-scl
+# Install packages from AlmaLinux base and EPEL
+RUN dnf -y install 'dnf-command(config-manager)'
+RUN dnf config-manager --set-enabled crb
+RUN dnf -y install epel-release
 
-# The "native" gcc compiler in CentOS 7 doesn't support C++11, which is
-# needed to compile at least one of the python packages below. Include the
-# SCL development toolset, which includes a more advanced compiler. 
-RUN yum -y install devtoolset-7-gcc*
-SHELL [ "/usr/bin/scl", "enable", "devtoolset-7"]
+RUN dnf -y update
 
 # Install packages needed for ROOT
-RUN yum -y install python3 python3-pip root which python3-root python3-devel
-RUN yum -y install root-tmva root-tmva-python root-minuit2 python3-jupyroot
+RUN dnf -y install python3 python3-pip root which python3-root python3-devel
+RUN dnf -y install root-tmva root-tmva-python root-minuit2 python3-jupyroot
 
 # curl will be needed when we install python packages below.
-RUN yum -y install curl libcurl libcurl-devel 
+RUN dnf -y install curl libcurl libcurl-devel --allowerasing
 
 # Additional packages for some C++ work:
-RUN yum -y install make boost-devel gsl-devel binutils-devel 
-#RUN yum -y install gcc-c++ gcc-gfortran
-
-# The "native" version of cmake in CentOS 7 is old and doesn't have
-# the necessary features to compile some of the python packages below.
-# Set up cmake3 as default version of cmake.
-RUN yum -y install cmake3 
-RUN ln -sf /usr/bin/cmake3 /usr/bin/cmake
+RUN dnf -y install make boost-devel gsl-devel binutils-devel 
+#RUN dnf -y install gcc-c++ gcc-gfortran
 
 # Other Linux packages required for python package compilation.
-RUN yum -y install python36-pillow-devel
+RUN yum -y install python3-pillow-devel openssl-devel
 
 # Install packages from PyPI. These are the ones needed for almost any
 # Jupyter installation. 
@@ -52,11 +42,11 @@ RUN pip3 install --upgrade numpy scipy matplotlib
 
 # These additional packages are handy, but not critical. 
 RUN pip3 install --upgrade jupyterlab
-RUN pip3 install --upgrade iminuit pandas sympy terminado urllib3 pycurl tables
-RUN pip3 install --upgrade rootpy rootkernel root-numpy uproot
+RUN pip3 install --upgrade iminuit pandas sympy terminado urllib3 tables
+RUN pip3 install --upgrade rootpy rootkernel uproot
 
 # Wrap it up.
-RUN yum clean all
+RUN dnf clean all
 
 # Run jupyter when this docker container is started.
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
