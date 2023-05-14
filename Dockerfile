@@ -29,7 +29,6 @@ RUN dnf -y install curl libcurl libcurl-devel --allowerasing
 
 # Additional packages for some C++ work:
 RUN dnf -y install make boost-devel gsl-devel binutils-devel 
-#RUN dnf -y install gcc-c++ gcc-gfortran
 
 # Other Linux packages required for python package compilation.
 RUN yum -y install python3-pillow-devel openssl-devel
@@ -41,7 +40,7 @@ RUN pip3 install --upgrade jupyter
 RUN pip3 install --upgrade numpy scipy matplotlib 
 
 # These additional packages are handy, but not critical. 
-RUN pip3 install --upgrade jupyterlab jupyter-server<2.0.0
+RUN pip3 install --upgrade jupyterlab "jupyter-server<2.0.0"
 RUN pip3 install --upgrade iminuit pandas sympy terminado urllib3 tables
 RUN pip3 install --upgrade rootpy rootkernel uproot
 
