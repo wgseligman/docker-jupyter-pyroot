@@ -9,8 +9,10 @@ This project was inspired by [sidebo/docker-pyroot-notebook](https://github.com/
 If you wanted the already-built version, it is in a [Dockerhub](https://hub.docker.com/r/wgseligman/jupyter-pyroot) repository. You can download and execute the docker container with (in UNIX):
 
 ```
-sudo docker run -p 8080:8080 -v $PWD:/work wgseligman/jupyter-pyroot
+sudo docker run -p 8080:8080 -v $PWD:/work wgseligman/jupyter-pyroot:latest-<processor>
 ```
+
+where `<processor>` is `amd64` for x86-64 and similar systems, and `arm64` for Apple's M1 and M2 systems.
 
 To change the host port mapping to a different port than 8080 change the first `8080` to the desired port number. To change the mapping from the internal container `/work` directory to some other host directory, change the `$PWD` to the desired directory. 
 
