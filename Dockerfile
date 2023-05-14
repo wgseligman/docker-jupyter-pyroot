@@ -41,7 +41,7 @@ RUN pip3 install --upgrade jupyter
 RUN pip3 install --upgrade numpy scipy matplotlib 
 
 # These additional packages are handy, but not critical. 
-RUN pip3 install --upgrade jupyterlab
+RUN pip3 install --upgrade jupyterlab jupyter-server<2.0.0
 RUN pip3 install --upgrade iminuit pandas sympy terminado urllib3 tables
 RUN pip3 install --upgrade rootpy rootkernel uproot
 
