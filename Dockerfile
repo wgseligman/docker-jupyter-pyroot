@@ -21,8 +21,8 @@ RUN dnf -y install epel-release
 RUN dnf -y update
 
 # Install packages needed for ROOT
-RUN dnf -y install python3 python3-pip root which python3-root python3-devel
-RUN dnf -y install root-tmva root-tmva-python root-minuit2 python3-jupyroot
+RUN dnf -y install python3 python3-pip  python3-devel which
+RUN dnf -y install root\*  python3-root python3-jupyroot
 
 # curl will be needed when we install python packages below.
 RUN dnf -y install curl libcurl libcurl-devel --allowerasing
@@ -31,18 +31,18 @@ RUN dnf -y install curl libcurl libcurl-devel --allowerasing
 RUN dnf -y install make boost-devel gsl-devel binutils-devel 
 
 # Other Linux packages required for python package compilation.
-RUN yum -y install python3-pillow-devel openssl-devel
+RUN dnf -y install python3-pillow-devel openssl-devel
 
 # Install packages from PyPI. These are the ones needed for almost any
 # Jupyter installation. 
 RUN pip3 install --upgrade wheel
-RUN pip3 install --upgrade jupyter
+RUN pip3 install --upgrade jupyter metakernel
 RUN pip3 install --upgrade numpy scipy matplotlib 
 
 # These additional packages are handy, but not critical. 
 RUN pip3 install --upgrade jupyterlab "jupyter-server<2.0.0"
 RUN pip3 install --upgrade iminuit pandas sympy terminado urllib3 tables
-RUN pip3 install --upgrade rootpy rootkernel uproot
+RUN pip3 install --upgrade uproot
 
 # Wrap it up.
 RUN dnf clean all
