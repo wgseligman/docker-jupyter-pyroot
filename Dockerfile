@@ -48,4 +48,4 @@ RUN pip3 install --upgrade rootpy rootkernel uproot
 RUN dnf clean all
 
 # Run jupyter when this docker container is started.
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
