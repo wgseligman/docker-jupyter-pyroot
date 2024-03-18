@@ -4,7 +4,7 @@ This docker container is an off-shoot of a [ROOT tutorial](https://www.nevis.col
 
 I've documented a [conda-based installation procedure](https://twiki.nevis.columbia.edu/twiki/bin/view/Main/JupyterROOTContainers). This docker container is meant to provide a pre-compiled local copy of a Jupyter/ROOT/C++ workspace for those for whom conda is not a good solution.
 
-This project was inspired by [sidebo/docker-pyroot-notebook](https://github.com/sidebo/docker-pyroot-notebook), but was created independently. It's meant to match the OS (AlmaLinux 9) and ROOT version (6.26.10 as of Feb-2023) in use on the Nevis Jupyterhub server, along with the Python and C++ packages most commonly used by Nevis physicists.
+This project was inspired by [sidebo/docker-pyroot-notebook](https://github.com/sidebo/docker-pyroot-notebook), but was created independently. It's meant to match the OS (AlmaLinux 9) and ROOT version (6.30.02 as of Mar-2024) in use on the Nevis Jupyterhub server, along with the Python and C++ packages most commonly used by Nevis physicists.
 
 If you wanted the already-built version, it is in a [Dockerhub](https://hub.docker.com/r/wgseligman/jupyter-pyroot) repository. You can download and execute the docker container with (in UNIX):
 
@@ -15,5 +15,3 @@ sudo docker run -p 8080:8080 -v $PWD:/work wgseligman/jupyter-pyroot:latest-<pro
 where `<processor>` is `amd64` for x86-64 and similar systems, and `arm64` for Apple's M1 and M2 systems.
 
 To change the host port mapping to a different port than 8080 change the first `8080` to the desired port number. To change the mapping from the internal container `/work` directory to some other host directory, change the `$PWD` to the desired directory. 
-
-Note that I create the pre-built version on an Apple Silicon M1 Macintosh. It might not run on an Intel system. 

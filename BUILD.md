@@ -15,9 +15,10 @@ This is a reminder to the package's author of how to build the Docker container.
          docker build --no-cache --platform=linux/arm64 -t wgseligman/jupyter-pyroot:latest-arm64 .
          docker build --no-cache --platform=linux/amd64 -t wgseligman/jupyter-pyroot:latest-amd64 .
          
-   - If the build is successful, push the container to the [Dockerhub repository](https://hub.docker.com/r/wgseligman/jupyter-pyroot):
+   - If the build is successful, push the containers to the [Dockerhub repository](https://hub.docker.com/r/wgseligman/jupyter-pyroot):
    
-         docker push wgseligman/jupyter-pyroot
+         docker push wgseligman/jupyter-pyroot:latest-arm64
+         docker push wgseligman/jupyter-pyroot:latest-amd64
          
 Prior to 2021, this procedure was not necessary; the [github repository](https://github.com/wgseligman/docker-jupyter-pyroot) was linked to Dockerhub so any
 changes in the github files would cause the docker container to be rebuilt. However, 
