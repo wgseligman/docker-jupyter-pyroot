@@ -28,3 +28,9 @@ When preparing this container in Sep-2021, I discovered that the container build
 had become trickier, as more of the python packages began to require C++11 and other
 development features. So it's probably best that I now have to supervise the container
 rebuild personally so that I'm aware of any problems during compilation. 
+
+Of course, finish with:
+
+    git commit -a -m
+    git push origin master
+
