@@ -1,3 +1,11 @@
+# IMPORTANT: This project is no longer maintained on github.
+
+It has been migrated to a repository on [codeberg](https://codeberg.org/wgseligman/docker-jupyter-pyroot). Please go to that site for the current version of this package.
+
+The remainder of this package has been left unchanged from the time of migration. No further changes will be made. This github repository has been marked read-only.
+
+# docker-jupyter-pyroot
+
 [ROOT](https://root.cern.ch/) is a toolkit developed at [CERN](https://home.cern/). Its primary audience is particle physicists who want to perform data analysis.
 
 This docker container is an off-shoot of a [ROOT tutorial](https://www.nevis.columbia.edu/~seligman/root-class/) I've taught at [Nevis Labs](https://www.nevis.columbia.edu/) for the past couple of decades. At Nevis I've set up a [Juptyerhub](https://jupyterhub.readthedocs.io/en/stable/) server for use by the particle-physics students and researchers. That's not enough for some of the scientists, especially those who take their laptops on plane rides without internet access. 
